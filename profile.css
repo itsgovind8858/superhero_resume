@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Ubuntu&display=swap');
+.main {
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#header {
+    display: grid;
+    grid-template-columns: 100%;
+    place-items: center;
+}
+.myFatherSaid {
+    padding: 5px;
+}
+h1 { 
+  animation: flicker 1.5s infinite alternate;
+  color: #f91111;
+  font-size: 39px;
+}
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+    }
+      20%, 24%, 55% {        
+      text-shadow:none;
+    }
+}
+.mainCard {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: 500px;
+    align-items: flex-end;
+    background-image: url('https://mcdn.wallpapersafari.com/medium/44/56/qzYpAF.jpg');
+    background-size:cover;
+    box-shadow: 20px 20px 5px 0 rgba(255, 0, 0, 0.8), 5px 15px 20px 0 rgba(5, 8, 10,0.19);
+} 
+body {
+    background-image: conic-gradient(red, yellow, red, blue, yellow);
+    position: relative;
+    font-family: ubuntu;
+}
+.card {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background: #fff;
+    transition: 0.5s;
+}
+.card:hover{
+    height: 330px;
+}
+.card .lines{
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+.card .lines::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.card .lines::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+.card .imgbx {
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+}    
+.card:hover .imgbx {
+    width: 250px;
+    height: 250px;
+}
+.card .imgbx::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(transparent,#c60303,#c60303,#c60303,transparent);
+    animation: animate2 6s linear infinite;
+}
+@keyframes animate2 {
+    0% {
+        transform: translate(-50%, 50%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+.card .imgbx::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #292929;
+}
+.card .imgbx img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+.card .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+.card .content .details {
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translate(0%);
+}
+.card:hover .content .details {
+    transform: translate(0%)
+}
+.card .content .details h2 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #f21010;
+    text-shadow: 3px 0 hsl(63, 93%, 51%);
+    line-height: 1.2em;
+}
+.card .content .details h2 span {
+    font-size: 25px;
+    font-weight: 500;
+    color: #e2ba05;
+    text-shadow: 2px 0 hsl(0, 95%, 55%);
+}
+.card .content .details .actionbtn button {
+    padding: 0.6em 2em;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    color: #050505;
+    background: #45f3ff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.card .content .details .actionbtn button::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #00ffd5,
+    #002bff,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+@keyframes glowing-button {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+.card .content .details .actionbtn button::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:#45f3ff;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.card .content .details .actionbtn button:nth-child(2) {
+    background: rgb(245, 12, 32);
+}
+.card .content .details .actionbtn button:hover {
+    opacity: 100%;
+}
+
+/* Resume Css */
+
+.headerRe {
+    padding: 5px 30px 5px 30px;
+    letter-spacing: 3px;
+    width: 90%;
+    height: auto;
+    background: #132121;
+    box-shadow: 20px 20px 5px 0 rgba(19, 33, 33, 0.7), 5px 15px 20px 0 rgba(5, 8, 10,0.19);
+}
+.headerRe .resume .imgLogoRe center img {
+    height: 55%;
+    width: 45%;
+    filter: drop-shadow(30px 10px 4px #020216);
+    border:2px solid #fff;
+    box-shadow: inset 10px 10px 50px #fff;
+}
+.headerRe .resume .addressRe p {
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: red;
+    text-shadow: 2px 2px #FF0000;
+    
+}
+.headerRe .resume .headingsRe h2 {
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: 2px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    text-shadow: 5px 5px 10px #12e3e780;
+
+/* Clip Background Image */
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.headerRe .resume .headingsRe p {
+    color: yellow;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+.headerRe .resume .headingsRe ul li {
+    font-size: 30px;
+    color: yellow;
+}
+.headerRe .resume .headingsRe strong {
+    color: #c60303;
+    font-size: 40px;
+    text-shadow: 2px 2px #FF0000;
+}
+.headerRe .resume .headingsRe .grid-container {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    gap: 15px;
+    /* grid-auto-flow: column; */
+    padding-top: 5px;
+
+  }
+.headerRe .resume .headingsRe .grid-container .grid-item {
+    color: yellow;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  /* responsive */
+  @media all and (min-width:300px) and (max-width:500px) {
+    .myFatherSaid h1 {
+        padding: 5px;
+        font-size: 15px;
+    }
+    .mainCard {
+        width: 90%;
+    }
+    .card {
+        width: 90%;
+        height: 250px;
+    }
+    .card:hover{
+        height: 300px;
+    }
+    .card .imgbx {
+        top: -20%;
+        width: 100px;
+        height: 100px;
+    }
+    .card:hover .imgbx {
+        width: 100px;
+        height: 100px;
+    }
+    .card .content .details h2 {
+        font-size: 25px;
+    }
+    .card .content .details h2 span {
+        font-size: 16px;
+    }
+    .card .content .details .actionbtn button {
+        font-size: 10px;
+    }
+    .headerRe .resume .addressRe p {
+        font-size: 20px;
+    }
+    .headerRe .resume .headingsRe h2 {
+        font-size: 44px;
+    }
+    .headerRe .resume .headingsRe p {
+        font-size: 20px;
+    }
+    .headerRe .resume .headingsRe ul li {
+        font-size: 20px;
+    }
+    .headerRe .resume .headingsRe strong {
+        font-size: 30px;
+    }
+    .headerRe .resume .headingsRe .grid-container {
+        grid-template-columns: auto;
+    }
+    .headerRe .resume .headingsRe .grid-container .grid-item {
+        font-size: 20px;
+    }
+  }
+
+  @media all and (min-width:500px) and (max-width:750px) {
+    .myFatherSaid h1 {
+        padding: 10px;
+        font-size: 25px;
+    }
+    .mainCard {
+        width: 90%;
+    }
+    .card {
+        width: 90%;
+        height: 250px;
+
+    }
+    .card:hover{
+        height: 300px;
+    }
+    .card .imgbx {
+        top: -30%;
+        width: 120px;
+        height: 120px;
+    }
+    .card:hover .imgbx {
+        width: 190px;
+        height: 190px;
+    }
+    .card .content .details h2 {
+        font-size: 30px;
+    }
+    .card .content .details h2 span {
+        font-size: 20px;
+    }
+    .card .content .details .actionbtn button {
+        font-size: 12px;
+    }
+    .headerRe .resume .addressRe p {
+        font-size: 25px;
+    }
+    .headerRe .resume .headingsRe h2 {
+        font-size: 55px;
+    }
+    .headerRe .resume .headingsRe p {
+        font-size: 25px;
+    }
+    .headerRe .resume .headingsRe ul li {
+        font-size: 25px;
+    }
+    .headerRe .resume .headingsRe strong {
+        font-size: 35px;
+    }
+    .headerRe .resume .headingsRe .grid-container {
+        grid-template-columns: auto;
+    }
+    .headerRe .resume .headingsRe .grid-container .grid-item {
+        padding: 5px;
+        font-size: 25px;
+      }
+}
